@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Bear</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" href="images/PandaProyectSINFondo1.png"
+	type="image/png" />
+</head>
+
+<body class="right-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<section id="header">
+
+			<!-- Logo -->
+			<h1>
+				<a href="index.html"><img src="/images/TitleBear.png"
+					width="10%"></a>
+			</h1>
+
+			<nav id="nav">
+				<ul>
+					<!--<li><a href="index.html">Home</a></li>-->
+					<li><a>Menu</a>
+						<ul>
+							<li><a th:href="@{/login}" href="#register1">Iniciar
+									Sesion</a></li>
+							<li><a th:href="@{/registro}">Registrarse</a></li>
+							<li><a th:href="@{/login}">Sobre nosotros</a></li>
+						</ul></li>
+					<li><a th:href="@{/publicaciones}">Publicaciones</a>
+			</nav>
+
+		</section>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-8 col-12-medium">
+
+						<!-- Content -->
+						<article class="box post">
+							<a href="#" class="image featured"><img
+								src="images/bareBearsCuttie.jpg" width="20%" alt="" /></a>
+							<header>
+								<h2>Registrarse</h2>
+							</header>
+							<form th:action="@{/registro}" method="post"
+								th:object="${usuario}">
+								<h1>Nuevo usuario</h1>
+								<div class="form-group">
+									<label for="nombre">Nombre : </label> <input id="nombre"
+										type="text" class="form-control" th:field="*{nombre}" required
+										autofocus="autofocus" placeholder="Introduzca su nombre">
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="apellido">Apellido :
+									</label> <input type="text" id="apellido" class="form-control"
+										th:field="*{apellido}" required autofocus="autofocus" placeholder="Introduzca los apellidos">
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="email">Email : </label> <input
+										id="email" type="email" class="form-control"
+										th:field="*{email}" required autofocus="autofocus" placeholder="Introduzca el email">
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="alias">Alias : </label> <input
+										type="text" id="alias" class="form-control" th:field="*{alias}" required
+										autofocus="autofocus" placeholder="Introduzca un alias">
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="password">Password :
+									</label> <input type="password" id="password" class="form-control"
+										th:field="*{password}" required autofocus="autofocus" placeholder="Introduzca la contraseña">
+								</div>
+
+								<footer>
+									<button type="submit" class="form-control btn btn-primary">Registrar</button>
+									<span>Si estas registrado <a th:href="@{/login}">Inicia
+											sesión aqui</a></span>
+								</footer>
+							</form>
+							<section>
+								<header>
+									<h3>Something else</h3>
+								</header>
+								<p>Elementum odio duis semper risus et lectus commodo
+									fringilla. Maecenas sagittis convallis justo vel mattis.
+									placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl
+									vitae porta lobortis, enim neque fringilla nunc, eget faucibus
+									lacus sem quis nunc suspendisse nec lectus sit amet augue
+									rutrum vulputate ut ut mi. Aenean elementum, mi sit amet
+									porttitor lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Lorem ipsum dolor sit amet nullam consequat feugiat
+									dolore tempus.</p>
+								<p>Nunc diam iaculis massa, et aliquet nibh leo non nisl
+									vitae porta lobortis, enim neque fringilla nunc, eget faucibus
+									lacus sem quis nunc suspendisse nec lectus sit amet augue
+									rutrum vulputate ut ut mi. Aenean elementum, mi sit amet
+									porttitor lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Lorem ipsum dolor sit amet nullam consequat feugiat
+									dolore tempus.</p>
+							</section>
+						</article>
+
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Sidebar -->
+						<section class="box">
+							<a href="#" class="image featured"><img
+								src="images/PandaProyectSINFondo1.png" /></a>
+							<header>
+								<h3>Sed etiam lorem nulla</h3>
+							</header>
+							<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit
+								consequat veroeros lorem blandit adipiscing et feugiat phasellus
+								tempus dolore ipsum lorem dolore.</p>
+							<footer>
+								<a href="#" class="button alt">Magna sed taciti</a>
+							</footer>
+						</section>
+						<section class="box">
+							<header>
+								<h3>Feugiat consequat</h3>
+							</header>
+							<p>Veroeros sed amet blandit consequat veroeros lorem blandit
+								adipiscing et feugiat sed lorem consequat feugiat lorem dolore.</p>
+							<ul class="divided">
+								<li><a href="#">Sed et blandit consequat sed</a></li>
+								<li><a href="#">Hendrerit tortor vitae sapien dolore</a></li>
+								<li><a href="#">Sapien id suscipit magna sed felis</a></li>
+								<li><a href="#">Aptent taciti sociosqu ad litora</a></li>
+							</ul>
+							<footer>
+								<a href="#" class="button alt">Ipsum consequat</a>
+							</footer>
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-8 col-12-medium"></div>
+					<div class="col-12">
+
+						<!-- Copyright -->
+						<div id="copyright">
+							<ul class="links">
+								<li>&copy; Untitled. All rights reserved.</li>
+								<li>Design: <a href="#">LOVE</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

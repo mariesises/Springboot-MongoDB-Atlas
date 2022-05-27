@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeLeaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<head>
+<title>Bear</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link  rel="icon"   href="images/PandaProyectSINFondo1.png" type="image/png" />
+</head>
+
+<body class="left-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<section id="header">
+			<!-- Logo -->
+			<h1>
+				<img src="images/TitleBear.png" width="20%" />
+			</h1>
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<!--<li><a href="index.html">Home</a></li>-->
+					<li><a>Menu</a>
+						<ul>
+							<li><a th:href="@{/login}" href="#register1">Iniciar
+									Sesion</a></li>
+							<li><a th:href="@{/registro}">Registrarse</a></li>
+							<li><a th:href="@{/login}">Sobre nosotros</a></li>
+						</ul></li>
+					<li><a th:href="@{/publicaciones}">Publicaciones</a>
+				</ul>
+			</nav>
+
+		</section>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+
+						<!-- Sidebar -->
+						<section class="box">
+							<a href="#" class="image featured"><img id="register1"
+								src="images/bareBearsCuttie.jpg" alt="" /></a>
+							<header>
+								<h3>Entrar a la Red Social</h3>
+							</header>
+							<form th:action="@{/login}" method="post" th:object="${usuario}">
+
+								<div th:if=${param.error}>
+									<div class="alert alert-danger">Usuario o contraseña
+										inválidos</div>
+								</div>
+
+								<div th:if=${param.logout}>
+									<div class="alert alert-info">Ha cerrado sesión
+										exitosamente</div>
+								</div>
+
+
+								<div class="form-group">
+									<label for="username">Email : </label> <input
+										id="username" name="username" type="text" class="form-control"
+										required autofocus="autofocus"
+										placeholder="Introduzca el email">
+								</div>
+
+								<div class="form-group">
+									<label for="password">Password : </label> <input id="password"
+										type="password" name="password" class="form-control" required
+										autofocus="autofocus" placeholder="Introduzca la contraseña">
+								</div>
+
+								<footer>
+									<button type="submit" class="form-control btn btn-primary"
+										value="Iniciar sesión">Entrar</button>
+									<a th:href="@{/registro}">Registrarse</a>
+								</footer>
+							</form>
+						</section>
+						<section class="box">
+							<header>
+								<h3>Feugiat consequat</h3>
+							</header>
+							<p>Veroeros sed amet blandit consequat veroeros lorem blandit
+								adipiscing et feugiat sed lorem consequat feugiat lorem dolore.</p>
+							<ul class="divided">
+								<li><a href="#">Sed et blandit consequat sed</a></li>
+								<li><a href="#">Hendrerit tortor vitae sapien dolore</a></li>
+								<li><a href="#">Sapien id suscipit magna sed felis</a></li>
+								<li><a href="#">Aptent taciti sociosqu ad litora</a></li>
+							</ul>
+							<footer>
+								<a href="#" class="button alt">Ipsum consequat</a>
+							</footer>
+						</section>
+
+					</div>
+					<div class="col-8 col-12-medium imp-medium">
+
+						<!-- Content -->
+						<article class="box post">
+							<a href="#" class="image featured"><img
+								src="images/PandaProyectSINFondo1.png" alt="" /></a>
+							<header>
+								<h2>Sobre nosotros</h2>
+								<p>Bear</p>
+							</header>
+							<p>Somos una pequeña red social dedicada a la publicacion
+								de contenidos que se comparten en una pequeña comunidad entre
+								los usuarios.</p>
+							<p>Praesent a dolor leo. Duis in felis in tortor lobortis
+								volutpat et pretium tellus. Vestibulum ac ante nisl, a elementum
+								odio. Duis semper risus et lectus commodo fringilla. Maecenas
+								sagittis convallis justo vel mattis. placerat, nunc diam iaculis
+								massa, et aliquet nibh leo non nisl vitae porta lobortis, enim
+								neque fringilla nunc, eget faucibus lacus sem quis nunc
+								suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi.
+								Aenean elementum, mi sit amet porttitor lorem ipsum dolor sit
+								amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet
+								nullam consequat feugiat dolore tempus.</p>
+							<section>
+								<header>
+									<h3>DiseÃ±ada por grandes profesionales</h3>
+								</header>
+								<img src="images/Tech-Bear.jpg" width="70%" />
+								<p>Elementum odio duis semper risus et lectus commodo
+									fringilla. Maecenas sagittis convallis justo vel mattis.
+									placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl
+									vitae porta lobortis, enim neque fringilla nunc.</p>
+							</section>
+							<section>
+								<header>
+									<h3>Accesible desde cualquier lugar</h3>
+								</header>
+								<img src="images/caveBear.jpg" width="70%" />
+								<p>Nunc diam iaculis massa, et aliquet nibh leo non nisl
+									vitae porta lobortis, enim neque fringilla nunc, eget faucibus
+									lacus sem quis nunc suspendisse nec lectus sit amet augue
+									rutrum vulputate ut ut mi. Aenean elementum, mi sit amet
+									porttitor lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Lorem ipsum dolor sit amet nullam consequat feugiat
+									dolore tempus. Elementum odio duis semper risus et lectus
+									commodo fringilla. Maecenas sagittis convallis justo vel
+									mattis.</p>
+							</section>
+							<section>
+								<header>
+									<h3>Usuarios felices</h3>
+								</header>
+								<img src="images/tedPC.jpg" width="70%" />
+								<p>Con mÃ¡s de un millÃ³n de usuarios satisfechos, nuestra
+									red seguirÃ¡ creciendo. Aenean elementum, mi sit amet porttitor
+									lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
+									ipsum dolor sit amet nullam consequat feugiat dolore tempus.
+									Elementum odio duis semper risus et lectus commodo fringilla.
+									Maecenas sagittis convallis justo vel mattis.</p>
+							</section>
+						</article>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-8 col-12-medium"></div>
+					<div class="col-12">
+
+						<!-- Copyright -->
+						<div id="copyright">
+							<ul class="links">
+								<li>&copy; Untitled. All rights reserved.</li>
+								<li>Design: <a href="#">LOVE</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

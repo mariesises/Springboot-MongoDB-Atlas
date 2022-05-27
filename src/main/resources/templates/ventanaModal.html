@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<title>Publicar</title>
+</head>
+
+<body>
+	<section class="modal">
+		<!-- Logo -->
+		<section id="header">
+			<h1>
+				<img src="images/TitleBear.png" width="10%" />
+			</h1>
+		</section>
+
+		<div class="modal-container">
+			<form th:action="@{/publicaciones}" method="post" enctype="multipart/form-data" th:object="${publicacion}">
+				<div class="form-group">
+					<label class="control-label" for="titulo">Titulo : </label> <input
+						id="titulo" type="text" class="form-control" th:field="*{titulo}"
+						required autofocus="autofocus" placeholder="Introduzca un titulo">
+				</div>
+
+				<div class="form-group">
+					<label class="control-label" for="descripcion">Descripcion
+						: </label> <input id="descripcion" class="form-control"
+						th:field="*{descripcion}" type="text" required autofocus="autofocus" placeholder="Introduzca una descripcion">
+				</div>
+				<br> <input type="file" name="imagensubida" accept="image/x-png,image/jpeg,image/jpg"/>
+				<p></p>
+				<input type="submit" value="Enviar datos">
+			</form>
+			<a th:href="@{/publicaciones}" class="close">&times;</a>
+		</div>
+	</section>
+</body>
+
+</html>
